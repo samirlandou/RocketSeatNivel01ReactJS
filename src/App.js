@@ -1,4 +1,8 @@
 import React, {useState} from 'react';
+
+import './App.css';
+import backgroundImage from './assets/ImageBackground.jpg'
+
 import Header from './components/Header';
 
 
@@ -64,6 +68,8 @@ function App(){
             </Header>
 
             <Header title= "Project1"/>
+
+            <img width={300}  src={backgroundImage} />
 
             <Header title= "Project2"/>
             <ul>

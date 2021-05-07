@@ -8,6 +8,6 @@ import App from './App';
 //render(<h1>Hello World!</h1>, document.getElementById('app'))
 
 /*todo os arquivos.js que são escrito com maiúsculo no início podem ser
-    rescritos como um TAG Ex:</App></App>)
-*/
+ rescritos como um TAG)*/
+
 render(<App/>, document.getElementById('app'));
