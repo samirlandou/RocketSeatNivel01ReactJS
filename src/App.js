@@ -47,16 +47,26 @@ function App(){
      * 
      */
 
-    function handleAddProject(){
+    async function handleAddProject(){
         //projects.push(`Novo Project ${Date.now()}`);
 
         //Como a array 'projects' é mutável, a gente aplica aqui o conceito de imutabilidade
         //criando um novo array e copiando com '[...projects]' (isso se chama Spread operator) 
         //tudo que já tem dentro do Projects (esse project é o project do constem). 
-        setProjects([...projects, `Novo Project ${Date.now()}`]);
+        //setProjects([...projects, `Novo Project ${Date.now()}`]);
+        //console.log(projects);
+
+        const response = await api.post('projects', {
+            title: `Novo Projeto ${Date.now()}`,
+            owner: "Sam é o Dono do projeto"
+        })
         
-        console.log(projects);
-    }
+        //Adicionando novo projeto
+        const project = response.data;
+
+        //Copiar o arrays do projetos e acrescentar o novo projeto
+        setProjects([... projects, project])
+    };
 
     return (
        /* <div>
